@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <!-- ========================================================= -->
+    <!-- ======================== Defaults ======================= -->
+    <!-- ========================================================= -->
+    <title>Entity of DemoPlugin_01 Component</title>
+    <description>None</description>
+
+    <entity entity-name="DemoUser" package-name="org.apache.ofbiz.demoPlugin_01">
+        <field name="userId" type="id"><description>Primary key</description></field>
+        <field name="firstName" type="name"/>
+        <field name="lastName" type="name"/>
+        <field name="address" type="name"/>
+        <prim-key field="userId"/>
+    </entity>
+
+    <entity entity-name="DemoProducts" package-name="org.apache.ofbiz.demoPlugin_01">
+        <field name="productId" type="id"/>
+        <field name="productName" type="name"/>
+        <field name="description" type="name"/>
+        <prim-key field="productId"/>
+    </entity>
+
+    <entity entity-name="DemoOrders" package-name="org.apache.ofbiz.demoPlugin_01">
+        <field name="orderId" type="id"/>
+        <field name="userId" type="id"/>
+        <field name="productId" type="id"/>
+        <field name="paymentMethod" type="name"/>
+        <prim-key field="orderId"/>
+        <relation type="one" rel-entity-name="DemoProducts" fk-name="ODEM_OD_PRODUCT_ID">
+            <key-map field-name="productId"/>
+        </relation>
+        <relation type="one" rel-entity-name="DemoUser" fk-name="ODEM_OD_USER_ID">
+            <key-map field-name="userId" />
+        </relation>
+    </entity>
+
+<!--New -->
+    <entity entity-name="OfbizDemoType" package-name="org.apache.ofbiz.demoPlugin_01" title="Ofbiz Type entity">
+        <field name="ofbizDemoTypeId" type="id"><description>Primary Sequence Id</description></field>
+        <field name="description" type="description"/>
+        <prim-key field="ofbizDemoTypeId"/>
+    </entity>
+
+    <entity entity-name="OfbizDemo" package-name="org.apache.ofbiz.demoPlugin_01">
+        <field name="ofbizDemoId" type="id"><description>Primary sequence id</description></field>
+        <field name="ofbizDemoTypeId" type="id"/>
+        <field name="firstName" type="name"/>
+        <field name="lastName" type="name"/>
+        <field name="comments" type="comment"/>
+        <prim-key field="ofbizDemoId"/>
+        <relation type="one" rel-entity-name="OfbizDemoType" fk-name="ODEM_OD_TYPE_ID">
+            <key-map field-name="ofbizDemoTypeId"/>
+        </relation>
+    </entity>
+</entitymodel>

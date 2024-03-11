@@ -1,0 +1,1 @@
+The DemoPlugin_01 Help file template.
