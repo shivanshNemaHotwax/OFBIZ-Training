@@ -24,10 +24,16 @@ under the License.
     <vendor></vendor>
     <version>1.0</version>
 
-    <service name="noSyntaxError" engine="interface">
+    <service name="ofbizDemoService" engine="entity-auto" default-entity-name ="DemoUser" invoke="create" auth="true">
         <description>
-            Dummy service to prevent empty files and syntax error - Remove when the 1st real service will be added here 
+            OFBIZ demo record
         </description>
+        <auto-attributes name="userId" include="pk" mode="IN" optional="false"/>
+        <auto-attributes name="firstName" include="nonpk" mode="IN" optional="true"/>
+        <auto-attributes name="lastName" include="nonpk" mode="IN" optional="true"/>
+        <auto-attributes name="address" include="nonpk" mode="IN" optional="true"/>
+
+        <override name="comments" optional="true"/>
     </service> 
     
 </services>
