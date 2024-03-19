@@ -32,13 +32,16 @@ under the License.
         <auto-attributes name="firstName" include="nonpk" mode="IN" optional="true"/>
         <auto-attributes name="lastName" include="nonpk" mode="IN" optional="true"/>
         <auto-attributes name="address" include="nonpk" mode="IN" optional="true"/>
+        <auto-attributes name="postalCode" include="nonpk" mode="IN" optional="true"/>
+        <auto-attributes name="city" include="nonpk" mode="IN" optional="true"/>
+
         <override name="comments" optional="true"/>
     </service>
 
 
     <service name="createPartyAndContactServices" engine="java"
-             location="org.apache.ofbiz.party.party.PartyServices"
-             invoke="createPerson" export="true">
+             location="org.apache.ofbiz.customer.CustomerServices"
+             invoke="CreatePartyAndContactMech" export="true">
         <description>Create party and contact services</description>
         <attribute name="partyId" type="String" mode="IN"/>
         <attribute name="firstName" type="String" mode="IN"/>
@@ -47,5 +50,6 @@ under the License.
         <attribute name="phone" type="String" mode="IN"/>
         <attribute name="genAddress" type="String" mode="IN"/>
     </service>
+
 
 </services>

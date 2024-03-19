@@ -19,6 +19,12 @@
        <label for="genAddress">General Address:</label>
        <input type="text" id="genAddress" name="genAddress" /><br/>
 
+       <label for="city">City:</label>
+       <input type="text" id="city" name="city" /><br/>
+
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" name="postalCode" /><br/>
+
       <input type="submit" value="Submit"/>
 </form>
 </div>
