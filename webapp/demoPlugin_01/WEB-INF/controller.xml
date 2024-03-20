@@ -61,8 +61,15 @@ under the License.
         <response name="success" type="view" value="customerInfo"/>
     </request-map>
 
+    <request-map uri="FindOfbizDemo">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindOfbizDemo"/>
+    </request-map>
+
+
     <view-map name="main" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#UserScreen"/>
     <view-map name="userScreen_02" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#UserScreen_02"/>
     <view-map name="customerInfo" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#customerInfo"/>
+    <view-map name="FindOfbizDemo" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#FindOfbizDemo"/>
 
 </site-conf>
