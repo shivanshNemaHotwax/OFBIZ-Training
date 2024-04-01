@@ -58,7 +58,24 @@ under the License.
     <request-map uri="createPartyAndContactServices">
         <security https="true" auth="true"/>
         <event type="service" path="" invoke="createPartyAndContactServices"/>
+        <response name="success" type="view" value="customerInfoDisplay"/>
+    </request-map>
+
+    <request-map uri="updateCustomerInfo">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="updateCustomerInfo"/>
+    </request-map>
+
+    <request-map uri="updateCustomer">
+        <security https="true" auth="true"/>
+        <event type="service" path="" invoke="updateCustomer"/>
         <response name="success" type="view" value="customerInfo"/>
+    </request-map>
+
+    <request-map uri="getAllPartiesDetails">
+        <security https="true" auth="true"/>
+        <event type="service" path="" invoke="getAllPartiesDetails"/>
+        <response name="success" type="view" value="partyDetails"/>
     </request-map>
 
     <request-map uri="FindOfbizDemo">
@@ -66,10 +83,19 @@ under the License.
         <response name="success" type="view" value="FindOfbizDemo"/>
     </request-map>
 
+<!--    <request-map uri="getAllPartiesDetails">-->
+<!--        <security https="true" auth="true"/>-->
+<!--        <event type="service" path="" invoke="getAllPartiesDetails"/>-->
+<!--        <response name="success" type="view" value="FindOfbizDemo"/>-->
+<!--    </request-map>-->
 
     <view-map name="main" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#UserScreen"/>
     <view-map name="userScreen_02" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#UserScreen_02"/>
     <view-map name="customerInfo" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#customerInfo"/>
+    <view-map name="customerInfoDisplay" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#customerInfoDisplay"/>
+    <view-map name="updateCustomerInfo" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#updateCustomerInfo"/>
+    <view-map name="partyDetails" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#partyDetails"/>
+
     <view-map name="FindOfbizDemo" type="screen" page="component://demoPlugin_01/widget/DemoPlugin_01Screens.xml#FindOfbizDemo"/>
 
 </site-conf>

@@ -75,6 +75,7 @@ under the License.
         </section>
     </screen>
 
+<!--Add customer-->
     <screen name="customerInfo">
         <section>
             <actions>
@@ -95,22 +96,62 @@ under the License.
         </section>
     </screen>
 
-    <!--    <screen name="UserScreen">-->
-<!--        <section>-->
-<!--            <actions>-->
-<!--                <form-map name="UserForm">-->
-<!--                    <field-map name="userId" field-name="userId"/>-->
-<!--                    <field-map name="userName" field-name="userName"/>-->
-<!--                </form-map>-->
-<!--            </actions>-->
-<!--            <widgets>-->
-<!--                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">                    <decorator-section name="body">-->
-<!--                        <form name="UserForm"/>-->
-<!--                    </decorator-section>-->
-<!--                </decorator-screen>-->
-<!--            </widgets>-->
-<!--        </section>-->
-<!--    </screen>-->
+<!--Display customer-->
+    <screen name="customerInfoDisplay">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="Customer Info">
+                            <platform-specific>
+                                <html><html-template location="component://demoPlugin_01/template/customerInfo/customerInfoDisplay.ftl"/></html>
+                            </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+<!--Update Customer-->
+    <screen name="updateCustomerInfo">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="Update Customer Info">
+                            <platform-specific>
+                                <html><html-template location="component://demoPlugin_01/template/customerInfo/updateCustomer.ftl"/></html>
+                            </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <!--Get all parties-->
+    <screen name="partyDetails">
+        <section>
+            <actions>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="Party info">
+                            <platform-specific>
+                                <html><html-template location="component://demoPlugin_01/template/customerInfo/customerDetails.ftl"/></html>
+                            </platform-specific>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
 
     <!--    find form screen-->
     <screen name="FindOfbizDemo">

@@ -41,16 +41,37 @@ under the License.
              location="org.apache.ofbiz.customer.CustomerServices"
              invoke="CreatePartyAndContactMech" export="true">
         <description>Create party and contact services</description>
-        <attribute name="partyId" type="String" mode="IN" optional="false"/>
+        <attribute name="partyId" type="String" mode="IN" optional="true"/>
         <attribute name="firstName" type="String" mode="IN" optional="false"/>
         <attribute name="lastName" type="String" mode="IN" optional="false"/>
-        <attribute name="email" type="String" mode="IN" optional="false"/>
-        <attribute name="phone" type="String" mode="IN" optional="false"/>
+        <attribute name="email" type="String" mode="IN" optional="true"/>
+        <attribute name="phone" type="String" mode="IN" optional="true"/>
         <attribute name="genAddress" type="String" mode="IN" optional="false"/>
         <attribute name="postalCode" type="String" mode="IN" optional="false"/>
         <attribute name="city" type="String" mode="IN" optional="false"/>
 
     </service>
 
+
+    <service name="updateCustomer" engine="java"
+             location="org.apache.ofbiz.customer.UpdateCustomer"
+             invoke="updateCustomerInfo" export="true">
+        <description>Create party and contact services</description>
+        <attribute name="partyId" type="String" mode="IN" optional="false"/>
+        <attribute name="updatedFirstName" type="String" mode="IN" optional="true"/>
+        <attribute name="updatedLastName" type="String" mode="IN" optional="true"/>
+        <attribute name="updatedEmail" type="String" mode="IN" optional="true"/>
+        <attribute name="updatedPhone" type="String" mode="IN" optional="true"/>
+        <attribute name="updatedGenAddress" type="String" mode="IN" optional="true"/>
+        <attribute name="updatedPostalCode" type="String" mode="IN" optional="true"/>
+        <attribute name="updatedCity" type="String" mode="IN" optional="true"/>
+    </service>
+
+    <service name="getAllPartiesDetails" engine="java"
+             location="org.apache.ofbiz.customer.CustomerServices"
+             invoke="getAllPartiesDetails" export="true">
+        <description>getAllPartiesDetails</description>
+        <attribute name="partyList" type="List" mode="OUT" />
+    </service>
 
 </services>
